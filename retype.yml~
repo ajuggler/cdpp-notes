@@ -1,0 +1,15 @@
+input: .
+output: .retype
+url: https://ajuggler.github.io/cdpp-notes/
+branding:
+  title: Cardano Developer Professional Program (by Emurgo Academy)
+  label: # Notes
+links:
+- text: Home
+  link: https://ajuggler.github.io/cdpp-notes/
+- text: Github
+  link: https://github.com/ajuggler
+- text: Personal homepage
+  link: https://antoniohernandez.mx
+footer:
+  # copyright: "&copy; Copyright {{ year }}. All rights reserved."
