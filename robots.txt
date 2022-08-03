@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ajuggler.github.io/cdpp-notes/sitemap.xml.gz
