@@ -225,7 +225,7 @@ Make sure to write '`export CARDANO_NODE_SOCKET_PATH`' **without** a dollar sign
 !!!
 
 !!!
-You need to export this environment variable whenever you start a shell in which you intend to run the script `start0node-testnet.sh` defined in the next subsection.
+You need to export this environment variable whenever you start a shell in which you intend to run the script `start-node-testnet.sh` defined in the next subsection.
 !!!
 
 
