@@ -12,7 +12,14 @@ order: -1
 
 # Installing the Cardano components on **MacOS**
 
-The following steps worked for me, working on an **Intel** based Mac.  For reference I also include the extra steps needed for an **M1** based Mac.  (Based on the [Installing cardano-node instructions](https://developers.cardano.org/docs/get-started/installing-cardano-node/) at [developers.cardano.org](https://developers.cardano.org/) .)
+These are the steps that worked for me.  My machine is an **Intel**
+based Mac.  For reference I also include the extra steps needed for an
+**M1** based Mac.
+
+(Based on [Installing cardano-node
+instructions](https://developers.cardano.org/docs/get-started/installing-cardano-node/)
+at [developers.cardano.org](https://developers.cardano.org/), with
+some modifications.)
 
 
 <a id="org3a1ef57"></a>
