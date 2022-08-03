@@ -216,7 +216,7 @@ From this [repository](https://hydra.iohk.io/build/13695229/download/1/index.htm
 
 Define the following environment variable:
 
-    export CARDANO_NODE_SOCKET_PATH=/Users/antonio/code/haskell/emurgo/testnet/node.socket
+    export CARDANO_NODE_SOCKET_PATH=$HOME/code/haskell/emurgo/testnet/node.socket
 
 (The Cardano socket is created automatically when you start the Cardano node for the first time.)
 
