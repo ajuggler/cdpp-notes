@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/cdpp-notes">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.713734122459">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.713735132866">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -33,11 +33,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/cdpp-notes/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=2.4.0.713734122459" rel="stylesheet" />
+    <link href="../resources/css/retype.css?v=2.4.0.713735132866" rel="stylesheet" />
 
-    <script type="text/javascript" src="../resources/js/config.js?v=2.4.0.713734122459" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../resources/js/config.js?v=2.4.0.713735132866" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=2.4.0.713734122459" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=2.4.0.713735132866" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -181,7 +181,7 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<p><a id="org1ca22ae"></a></p>
+<p><a id="org9cefc0b"></a></p>
 <doc-anchor-target id="wallets-setup--funding" class="break-words">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#wallets-setup--funding">#</doc-anchor-trigger>
@@ -200,7 +200,7 @@
     </div>
 </div>
 
-<p><a id="org7019e13"></a></p>
+<p><a id="orgbcbbf97"></a></p>
 <doc-anchor-target id="key-pair">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#key-pair">#</doc-anchor-trigger>
@@ -212,7 +212,7 @@
 <li>Private key (signature) ⟶ .skey</li>
 <li>Public key (verification) ⟶ .vkey</li>
 </ul>
-<p><a id="org788a845"></a></p>
+<p><a id="org121e491"></a></p>
 <doc-anchor-target id="socket">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socket">#</doc-anchor-trigger>
@@ -224,7 +224,7 @@
 <pre class="language-none"><code v-pre class="language-none">export CARDANO_NODE_SOCKET_PATH=/Users/antonio/code/haskell/emurgo/testnet/node.socket</code></pre>
 </doc-codeblock></div>
 <p><em>Note:</em>  Cardano socket is created automatically when you start the Cardano node for the first time.</p>
-<p><a id="orga34d29d"></a></p>
+<p><a id="org878d20e"></a></p>
 <doc-anchor-target id="testnet-magic">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#testnet-magic">#</doc-anchor-trigger>
@@ -232,7 +232,7 @@
     </h2>
 </doc-anchor-target>
 <p>Current <em>Testnet magic</em> is <code v-pre>1097911063</code></p>
-<p><a id="orgf39f862"></a></p>
+<p><a id="orgb7f6a25"></a></p>
 <doc-anchor-target id="protocol-parameters">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#protocol-parameters">#</doc-anchor-trigger>
@@ -243,7 +243,7 @@
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">$ cardano-cli query protocol-parameters --testnet-magic 1097911063 --out-file ~/code/haskell/emurgo/testnet/testnet-protocol-params.json</code></pre>
 </doc-codeblock></div>
-<p><a id="org2e2d13e"></a></p>
+<p><a id="org0a0a079"></a></p>
 <doc-anchor-target id="addresses">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#addresses">#</doc-anchor-trigger>
@@ -265,7 +265,7 @@
 <p>All addresses are derived from hashing the public key.</p>
 </li>
 </ul>
-<p><a id="org60e67f6"></a></p>
+<p><a id="org75e26e3"></a></p>
 <doc-anchor-target id="generating-credentials">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#generating-credentials">#</doc-anchor-trigger>
@@ -294,7 +294,16 @@ myWallet1.addr  myWallet1.vkey  myWallet1.skey  myWallet1M.addr</code></pre>
 </doc-codeblock></div>
 </li>
 </ol>
-<p><a id="org8b73c76"></a></p>
+<p><a id="org2751928"></a></p>
+<doc-anchor-target id="funding-the-wallet">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#funding-the-wallet">#</doc-anchor-trigger>
+        <span>Funding the wallet</span>
+    </h3>
+</doc-anchor-target>
+<p>Now that we have an address in <code v-pre>myWallet1.addr</code>, we fund the wallet using the <a href="https://testnets.cardano.org/en/testnets/cardano/tools/faucet/">Faucet</a>.</p>
+<p>We only fund wallet 1 in this manner.  Wallet 2 is funded by building a transaction, as explained below.  (If we wanted to use the faucet to fund wallet 2 as well we would need to wait at least 24 hours.)</p>
+<p><a id="orgea8936d"></a></p>
 <doc-anchor-target id="querying-a-wallet-address">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#querying-a-wallet-address">#</doc-anchor-trigger>
@@ -314,14 +323,14 @@ $ cardano-cli query utxo --address $(cat myWallet1.addr) --testnet-magic 1097911
 <p><img src="../figs/02_transaction1a.png" alt="img" /></p>
 </li>
 </ol>
-<p><a id="org42dcda4"></a></p>
+<p><a id="orgf8ae88f"></a></p>
 <doc-anchor-target id="transactions">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#transactions">#</doc-anchor-trigger>
         <span>Transactions</span>
     </h2>
 </doc-anchor-target>
-<p><a id="org1a54f5e"></a></p>
+<p><a id="orgeb97abb"></a></p>
 <doc-anchor-target id="building-the-transaction">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#building-the-transaction">#</doc-anchor-trigger>
@@ -360,7 +369,7 @@ $ cat tx.draft
 </doc-codeblock></div>
 </li>
 </ol>
-<p><a id="org215d932"></a></p>
+<p><a id="orga8bbd05"></a></p>
 <doc-anchor-target id="signing-the-transaction">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#signing-the-transaction">#</doc-anchor-trigger>
@@ -394,7 +403,7 @@ $ cat tx.signed
 </doc-codeblock></div>
 </li>
 </ol>
-<p><a id="org67c5189"></a></p>
+<p><a id="org59fabb4"></a></p>
 <doc-anchor-target id="submitting-the-transaction">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#submitting-the-transaction">#</doc-anchor-trigger>
@@ -412,7 +421,7 @@ $ cat tx.signed
 <pre class="language-none"><code v-pre class="language-none">$ cardano-cli transaction submit --testnet-magic 1097911063 --tx-file tx.signed
 Transaction successfully submitted.</code></pre>
 </doc-codeblock></div>
-<p><a id="org2a9dea0"></a></p>
+<p><a id="org1a3da00"></a></p>
 <doc-anchor-target id="final-balances">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#final-balances">#</doc-anchor-trigger>
@@ -432,7 +441,7 @@ Transaction successfully submitted.</code></pre>
 --------------------------------------------------------------------------------------
 30eea3e9228b94cad0cbfb131f65ebf3e9d5b24820394dca8408920037797e64     0        699828427 lovelace + TxOutDatumNone</code></pre>
 </doc-codeblock></div>
-<p><a id="org97d53ac"></a></p>
+<p><a id="org6d878f1"></a></p>
 <doc-anchor-target id="some-useful-links">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#some-useful-links">#</doc-anchor-trigger>
