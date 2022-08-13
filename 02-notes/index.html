@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/cdpp-notes">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.713732637956">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.713734122459">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>Key pair</title>
-    <meta name="title" content="Key pair">
+    <title>Wallets setup &amp; funding</title>
+    <meta name="title" content="Wallets setup & funding">
     <meta name="description" content="The key pair consists of:" />
 
     <!-- Canonical -->
@@ -20,24 +20,24 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ajuggler.github.io/cdpp-notes/02-notes/">
-    <meta property="og:title" content="Key pair">
+    <meta property="og:title" content="Wallets setup & funding">
     <meta property="og:description" content="The key pair consists of:">
     <meta property="og:image" content="https://ajuggler.github.io/cdpp-notes/figs/02_transaction1a.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://ajuggler.github.io/cdpp-notes/02-notes/">
-    <meta property="twitter:title" content="Key pair">
+    <meta property="twitter:title" content="Wallets setup & funding">
     <meta property="twitter:description" content="The key pair consists of:">
     <meta property="twitter:image" content="https://ajuggler.github.io/cdpp-notes/figs/02_transaction1a.png">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/cdpp-notes/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=2.4.0.713732637956" rel="stylesheet" />
+    <link href="../resources/css/retype.css?v=2.4.0.713734122459" rel="stylesheet" />
 
-    <script type="text/javascript" src="../resources/js/config.js?v=2.4.0.713732637956" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../resources/js/config.js?v=2.4.0.713734122459" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=2.4.0.713732637956" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=2.4.0.713734122459" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -181,11 +181,11 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<p><a id="org37087c1"></a></p>
-<doc-anchor-target id="key-pair" class="break-words">
+<p><a id="org1ca22ae"></a></p>
+<doc-anchor-target id="wallets-setup--funding" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#key-pair">#</doc-anchor-trigger>
-        <span>Key pair</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#wallets-setup--funding">#</doc-anchor-trigger>
+        <span>Wallets setup &amp; funding</span>
     </h1>
 </doc-anchor-target>
 <div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
@@ -200,48 +200,55 @@
     </div>
 </div>
 
+<p><a id="org7019e13"></a></p>
+<doc-anchor-target id="key-pair">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key-pair">#</doc-anchor-trigger>
+        <span>Key pair</span>
+    </h2>
+</doc-anchor-target>
 <p>The key pair consists of:</p>
 <ul>
 <li>Private key (signature) ⟶ .skey</li>
 <li>Public key (verification) ⟶ .vkey</li>
 </ul>
-<p><a id="org74ca727"></a></p>
+<p><a id="org788a845"></a></p>
 <doc-anchor-target id="socket">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socket">#</doc-anchor-trigger>
         <span>Socket</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <p>Recall that if you want to run cardano-cli commands on-chain, you need to export the path variable on the current shell:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">export CARDANO_NODE_SOCKET_PATH=/Users/antonio/code/haskell/emurgo/testnet/node.socket</code></pre>
 </doc-codeblock></div>
 <p><em>Note:</em>  Cardano socket is created automatically when you start the Cardano node for the first time.</p>
-<p><a id="orgddb44ad"></a></p>
+<p><a id="orga34d29d"></a></p>
 <doc-anchor-target id="testnet-magic">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#testnet-magic">#</doc-anchor-trigger>
         <span>Testnet magic</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <p>Current <em>Testnet magic</em> is <code v-pre>1097911063</code></p>
-<p><a id="org3cd6cba"></a></p>
+<p><a id="orgf39f862"></a></p>
 <doc-anchor-target id="protocol-parameters">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#protocol-parameters">#</doc-anchor-trigger>
         <span>Protocol parameters</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <p>We query the <em>testnet</em> protocol parameters and save them on a file on the testnet directory.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">$ cardano-cli query protocol-parameters --testnet-magic 1097911063 --out-file ~/code/haskell/emurgo/testnet/testnet-protocol-params.json</code></pre>
 </doc-codeblock></div>
-<p><a id="org7b33c3d"></a></p>
+<p><a id="org2e2d13e"></a></p>
 <doc-anchor-target id="addresses">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#addresses">#</doc-anchor-trigger>
         <span>Addresses</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <ul>
 <li><p>&quot;Enterprise&quot; addresses (only for payment)</p>
@@ -258,33 +265,23 @@
 <p>All addresses are derived from hashing the public key.</p>
 </li>
 </ul>
-<p><a id="orgb60bf6c"></a></p>
+<p><a id="org60e67f6"></a></p>
 <doc-anchor-target id="generating-credentials">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#generating-credentials">#</doc-anchor-trigger>
         <span>Generating credentials</span>
-    </h2>
-</doc-anchor-target>
-<p><a id="orga0e1e39"></a></p>
-<doc-anchor-target id="generating-key-pair">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#generating-key-pair">#</doc-anchor-trigger>
-        <span>Generating key pair</span>
     </h3>
 </doc-anchor-target>
+<ol>
+<li><p>Generating key pair</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">$ cardano-cli address key-gen --verification-key-file myWallet1.vkey --signing-key-file myWallet1.skey
 $ 
 $ ls
 myWallet1.skey  myWallet1.vkey</code></pre>
 </doc-codeblock></div>
-<p><a id="org49cfaab"></a></p>
-<doc-anchor-target id="generating-address">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#generating-address">#</doc-anchor-trigger>
-        <span>Generating address</span>
-    </h3>
-</doc-anchor-target>
+</li>
+<li><p>Generating address</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">$ cardano-cli address build --payment-verification-key-file myWallet1.vkey --testnet-magic 1097911063 --out-file myWallet1.addr
 $ ls
@@ -295,12 +292,14 @@ $ cardano-cli address build --payment-verification-key-file myWallet1.vkey --mai
 $ ls
 myWallet1.addr  myWallet1.vkey  myWallet1.skey  myWallet1M.addr</code></pre>
 </doc-codeblock></div>
-<p><a id="org8c3f523"></a></p>
+</li>
+</ol>
+<p><a id="org8b73c76"></a></p>
 <doc-anchor-target id="querying-a-wallet-address">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#querying-a-wallet-address">#</doc-anchor-trigger>
         <span>Querying a wallet address</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">$ pwd
@@ -310,39 +309,27 @@ $ cardano-cli query utxo --address $(cat myWallet1.addr) --testnet-magic 1097911
 --------------------------------------------------------------------------------------
 638c5099782f9270178367178ffffeb077f921cefe670612b1ea99df8183feb4     0        1000000000 lovelace + TxOutDatumNone</code></pre>
 </doc-codeblock></div>
-<p><a id="org1016cd3"></a></p>
-<doc-anchor-target id="can-verify-funds-at-cardanoscan-testnet">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#can-verify-funds-at-cardanoscan-testnet">#</doc-anchor-trigger>
-        <span>Can verify funds at <a href="https://testnet.cardanoscan.io">Cardanoscan (testnet)</a></span>
-    </h3>
-</doc-anchor-target>
-<p><figure class="content-center">
-    <img src="../figs/02_transaction1a.png" alt="img" />
-    <figcaption class="caption">img</figcaption>
-</figure>
-</p>
-<p><a id="org0d95f27"></a></p>
+<ol>
+<li><p>Can verify funds at <a href="https://testnet.cardanoscan.io">Cardanoscan (testnet)</a></p>
+<p><img src="../figs/02_transaction1a.png" alt="img" /></p>
+</li>
+</ol>
+<p><a id="org42dcda4"></a></p>
 <doc-anchor-target id="transactions">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#transactions">#</doc-anchor-trigger>
         <span>Transactions</span>
-    </h1>
-</doc-anchor-target>
-<p><a id="org0444a5d"></a></p>
-<doc-anchor-target id="building-the-transaction">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#building-the-transaction">#</doc-anchor-trigger>
-        <span>Building the transaction</span>
     </h2>
 </doc-anchor-target>
-<p><a id="org97915b5"></a></p>
-<doc-anchor-target id="script">
+<p><a id="org1a54f5e"></a></p>
+<doc-anchor-target id="building-the-transaction">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#script">#</doc-anchor-trigger>
-        <span>Script</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#building-the-transaction">#</doc-anchor-trigger>
+        <span>Building the transaction</span>
     </h3>
 </doc-anchor-target>
+<ol>
+<li><p>Script</p>
 <p>File <code v-pre>tx_draft.sh</code></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">cardano-cli transaction build \
@@ -357,13 +344,8 @@ $ cardano-cli query utxo --address $(cat myWallet1.addr) --testnet-magic 1097911
 
 $ chmod u+x tx_draft.sh </code></pre>
 </doc-codeblock></div>
-<p><a id="org512ac7a"></a></p>
-<doc-anchor-target id="execution">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#execution">#</doc-anchor-trigger>
-        <span>Execution</span>
-    </h3>
-</doc-anchor-target>
+</li>
+<li><p>Execution</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">$ ./tx_draft.sh
 Estimated transaction fee: Lovelace 171573
@@ -376,20 +358,17 @@ $ cat tx.draft
     &quot;cborHex&quot;: &quot;86a40081825820638c5099782f9270178367178ffffeb077f921cefe670612b1ea99df8183feb4000182a200581d608c6adcdc687ab5caa261d4f7ce7156d83b90860e7638a2eefa4ea0cc011a29b688cba200581d600852c087a3e75a4ff877cd08b47027eac946f32cb72cde805da230f1011a11e1a300021a00029e350e81581c8c6adcdc687ab5caa261d4f7ce7156d83b90860e7638a2eefa4ea0cc9fff8080f5f6&quot;
 }</code></pre>
 </doc-codeblock></div>
-<p><a id="orgfcb1ab3"></a></p>
+</li>
+</ol>
+<p><a id="org215d932"></a></p>
 <doc-anchor-target id="signing-the-transaction">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#signing-the-transaction">#</doc-anchor-trigger>
         <span>Signing the transaction</span>
-    </h2>
-</doc-anchor-target>
-<p><a id="org09068f4"></a></p>
-<doc-anchor-target id="script-1">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#script-1">#</doc-anchor-trigger>
-        <span>Script</span>
     </h3>
 </doc-anchor-target>
+<ol>
+<li><p>Script</p>
 <p>File <code v-pre>tx_signed.sh</code></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">cardano-cli transaction sign \
@@ -400,13 +379,8 @@ $ cat tx.draft
 
 $ chmod u+x tx_signed.sh </code></pre>
 </doc-codeblock></div>
-<p><a id="orgd6373a0"></a></p>
-<doc-anchor-target id="execution-1">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#execution-1">#</doc-anchor-trigger>
-        <span>Execution</span>
-    </h3>
-</doc-anchor-target>
+</li>
+<li><p>Execution</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">$ ./tx_signed.sh
 $
@@ -418,12 +392,14 @@ $ cat tx.signed
     &quot;cborHex&quot;: &quot;84a40081825820638c5099782f9270178367178ffffeb077f921cefe670612b1ea99df8183feb4000182a200581d608c6adcdc687ab5caa261d4f7ce7156d83b90860e7638a2eefa4ea0cc011a29b688cba200581d600852c087a3e75a4ff877cd08b47027eac946f32cb72cde805da230f1011a11e1a300021a00029e350e81581c8c6adcdc687ab5caa261d4f7ce7156d83b90860e7638a2eefa4ea0cca100818258207fd4a6131432173c843689d13c64b3e616671efa411fb5a812450a28c9ff3088584022abcef02b26e7e8f91bea7ff98b2e6018cd4833998693d190019ff7b6f5fd9091318294b6b27f55a098e44b28d7c3061369762de43f8e7952168ce743a52d08f5f6&quot;
 }</code></pre>
 </doc-codeblock></div>
-<p><a id="org72f17cc"></a></p>
+</li>
+</ol>
+<p><a id="org67c5189"></a></p>
 <doc-anchor-target id="submitting-the-transaction">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#submitting-the-transaction">#</doc-anchor-trigger>
         <span>Submitting the transaction</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p>We first query the utxo&#x27;s at wallet 2 <strong>before</strong> the transaction:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -436,12 +412,12 @@ $ cat tx.signed
 <pre class="language-none"><code v-pre class="language-none">$ cardano-cli transaction submit --testnet-magic 1097911063 --tx-file tx.signed
 Transaction successfully submitted.</code></pre>
 </doc-codeblock></div>
-<p><a id="orgad44e7a"></a></p>
+<p><a id="org2a9dea0"></a></p>
 <doc-anchor-target id="final-balances">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#final-balances">#</doc-anchor-trigger>
         <span>Final balances</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p>Query the utxo&#x27;s at wallet 2 <strong>after</strong> the transaction:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -456,12 +432,12 @@ Transaction successfully submitted.</code></pre>
 --------------------------------------------------------------------------------------
 30eea3e9228b94cad0cbfb131f65ebf3e9d5b24820394dca8408920037797e64     0        699828427 lovelace + TxOutDatumNone</code></pre>
 </doc-codeblock></div>
-<p><a id="org5d6f974"></a></p>
+<p><a id="org97d53ac"></a></p>
 <doc-anchor-target id="some-useful-links">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#some-useful-links">#</doc-anchor-trigger>
         <span>Some useful links</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <ul>
 <li><a href="https://testnets.cardano.org/en/testnets/cardano/tools/faucet/">Faucet</a></li>
