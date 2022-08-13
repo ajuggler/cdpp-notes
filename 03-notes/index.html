@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/cdpp-notes">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.713735132866">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.713735976741">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>Working wth Metadata</title>
-    <meta name="title" content="Working wth Metadata">
+    <title>Working with Metadata</title>
+    <meta name="title" content="Working with Metadata">
     <meta name="description" content="We can attach metadata to a transaction. From the reference:" />
 
     <!-- Canonical -->
@@ -20,22 +20,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ajuggler.github.io/cdpp-notes/03-notes/">
-    <meta property="og:title" content="Working wth Metadata">
+    <meta property="og:title" content="Working with Metadata">
     <meta property="og:description" content="We can attach metadata to a transaction. From the reference:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://ajuggler.github.io/cdpp-notes/03-notes/">
-    <meta property="twitter:title" content="Working wth Metadata">
+    <meta property="twitter:title" content="Working with Metadata">
     <meta property="twitter:description" content="We can attach metadata to a transaction. From the reference:">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/cdpp-notes/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=2.4.0.713735132866" rel="stylesheet" />
+    <link href="../resources/css/retype.css?v=2.4.0.713735976741" rel="stylesheet" />
 
-    <script type="text/javascript" src="../resources/js/config.js?v=2.4.0.713735132866" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../resources/js/config.js?v=2.4.0.713735976741" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=2.4.0.713735132866" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=2.4.0.713735976741" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -179,11 +179,11 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<p><a id="orgae16c9a"></a></p>
-<doc-anchor-target id="working-wth-metadata" class="break-words">
+<p><a id="org816fe27"></a></p>
+<doc-anchor-target id="working-with-metadata" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#working-wth-metadata">#</doc-anchor-trigger>
-        <span>Working wth Metadata</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#working-with-metadata">#</doc-anchor-trigger>
+        <span>Working with Metadata</span>
     </h1>
 </doc-anchor-target>
 <div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
@@ -210,7 +210,7 @@
 <li>Metadata in JSON format with <em>detailed schema</em></li>
 </ul>
 <p>In this notes we:  a) write the json file with metadata; b) build, sign and send a transaction with metadata.</p>
-<p><a id="org6754209"></a></p>
+<p><a id="org2346a30"></a></p>
 <doc-anchor-target id="the-metadata">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-metadata">#</doc-anchor-trigger>
@@ -218,7 +218,7 @@
     </h2>
 </doc-anchor-target>
 <p>In this exercise, the purpose of this metadata is to assign a value to a given metadata key (integer) <code v-pre>k = 152755</code>.  The value is in turn a mapping that assigns the hash of a name to key <em>name</em> and the value &quot;1&quot; to the key flag <em>completed</em>.</p>
-<p><a id="orgda1adf5"></a></p>
+<p><a id="org7ae5fd4"></a></p>
 <doc-anchor-target id="metadata-json-file">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#metadata-json-file">#</doc-anchor-trigger>
@@ -232,20 +232,21 @@
     &quot;completed&quot; : 1
 }}</code></pre>
 </doc-codeblock></div>
-<p><a id="org666b7d7"></a></p>
+<p><a id="org97e352a"></a></p>
 <doc-anchor-target id="the-transaction">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-transaction">#</doc-anchor-trigger>
         <span>The transaction</span>
     </h2>
 </doc-anchor-target>
-<p><a id="orgf51135e"></a></p>
+<p><a id="orgdc0590e"></a></p>
 <doc-anchor-target id="scripts-for-build-and-sign">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#scripts-for-build-and-sign">#</doc-anchor-trigger>
         <span>Scripts for build and sign</span>
     </h3>
 </doc-anchor-target>
+<p>Wrote the <em>build</em> and <em>sign</em> scripts.  Don&#x27;t forget to <code v-pre>chmod u+x &lt;scriptname&gt;</code> after creating the script files.</p>
 <ol>
 <li><p>Build</p>
 <p>Wrote the script <code v-pre>tx_meta_draft.sh</code> :</p>
@@ -272,7 +273,7 @@
 </doc-codeblock></div>
 </li>
 </ol>
-<p><a id="org45c038c"></a></p>
+<p><a id="org328bf11"></a></p>
 <doc-anchor-target id="script-execution">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#script-execution">#</doc-anchor-trigger>
@@ -322,7 +323,7 @@ witnesses:
 - key: VKey (VerKeyEd25519DSIGN &quot;7fd4a6131432173c843689d13c64b3e616671efa411fb5a812450a28c9ff3088&quot;)
   signature: SignedDSIGN (SigEd25519DSIGN &quot;6f83d3cbaeaa9e54a2bc9d6c7ca69c5e912b5464d6d10a7794008544ae27faa2f2c3d6467afcbb76f1a1138fc3065bac529e0ae3fa27f1815b13502d9260c20c&quot;)</code></pre>
 </doc-codeblock></div>
-<p><a id="org1a2f584"></a></p>
+<p><a id="org78bcde1"></a></p>
 <doc-anchor-target id="submitting-the-transaction">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#submitting-the-transaction">#</doc-anchor-trigger>
@@ -346,7 +347,7 @@ $ cardano-cli query utxo --address $(cat myWallet1.addr) --testnet-magic 1097911
 --------------------------------------------------------------------------------------
 888eb4a8a5a63eeb809cb565a6cc42bb42b7b89ba54362abbcf7f743a18fe94c     0        699658790 lovelace + TxOutDatumNone</code></pre>
 </doc-codeblock></div>
-<p><a id="orgadeb300"></a></p>
+<p><a id="org4863aa3"></a></p>
 <doc-anchor-target id="references">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#references">#</doc-anchor-trigger>
