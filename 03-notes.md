@@ -8,7 +8,7 @@ order: -3
 ---
 
 
-<a id="org816fe27"></a>
+<a id="org1828bc8"></a>
 
 # Working with Metadata
 
@@ -27,14 +27,14 @@ On-chain metadata that is carried along with the transaction is encoded as CBOR.
 In this notes we:  a) write the json file with metadata; b) build, sign and send a transaction with metadata.
 
 
-<a id="org2346a30"></a>
+<a id="org2af2841"></a>
 
 ## The metadata
 
 In this exercise, the purpose of this metadata is to assign a value to a given metadata key (integer) `k = 152755`.  The value is in turn a mapping that assigns the hash of a name to key *name* and the value "1" to the key flag *completed*.
 
 
-<a id="org7ae5fd4"></a>
+<a id="org256ace9"></a>
 
 ### Metadata json file
 
@@ -45,12 +45,12 @@ In this exercise, the purpose of this metadata is to assign a value to a given m
     }}
 
 
-<a id="org97e352a"></a>
+<a id="orgf1234f4"></a>
 
 ## The transaction
 
 
-<a id="orgdc0590e"></a>
+<a id="org6760a48"></a>
 
 ### Scripts for build and sign
 
@@ -81,7 +81,7 @@ Wrote the *build* and *sign* scripts.  Don't forget to `chmod u+x <scriptname>` 
         	    --out-file tx_meta.signed
 
 
-<a id="org328bf11"></a>
+<a id="org38dae3e"></a>
 
 ### Script execution
 
@@ -91,7 +91,10 @@ Wrote the *build* and *sign* scripts.  Don't forget to `chmod u+x <scriptname>` 
     $ 
     $ # Sign
     $ ./tx_meta_signed.sh
-    $ 
+
+Let us explore the (not yet submitted) signed transaction:
+
+    $ # View the transaction
     $ cardano-cli transaction view --tx-file tx_meta.signed
     auxiliary scripts: null
     certificates: null
@@ -127,8 +130,10 @@ Wrote the *build* and *sign* scripts.  Don't forget to `chmod u+x <scriptname>` 
     - key: VKey (VerKeyEd25519DSIGN "7fd4a6131432173c843689d13c64b3e616671efa411fb5a812450a28c9ff3088")
       signature: SignedDSIGN (SigEd25519DSIGN "6f83d3cbaeaa9e54a2bc9d6c7ca69c5e912b5464d6d10a7794008544ae27faa2f2c3d6467afcbb76f1a1138fc3065bac529e0ae3fa27f1815b13502d9260c20c")
 
+So we confirm that the *metadata* is part of the transaction.
 
-<a id="org78bcde1"></a>
+
+<a id="org3802522"></a>
 
 ### Submitting the transaction
 
@@ -148,8 +153,10 @@ Wrote the *build* and *sign* scripts.  Don't forget to `chmod u+x <scriptname>` 
     --------------------------------------------------------------------------------------
     888eb4a8a5a63eeb809cb565a6cc42bb42b7b89ba54362abbcf7f743a18fe94c     0        699658790 lovelace + TxOutDatumNone
 
+We see that a utxo was consumed and a new utxo was created.
 
-<a id="org4863aa3"></a>
+
+<a id="org2e30f63"></a>
 
 ## References
 
