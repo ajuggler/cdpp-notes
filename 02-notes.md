@@ -8,12 +8,12 @@ order: -2
 ---
 
 
-<a id="org1ca22ae"></a>
+<a id="org9cefc0b"></a>
 
 # Wallets setup & funding
 
 
-<a id="org7019e13"></a>
+<a id="orgbcbbf97"></a>
 
 ## Key pair
 
@@ -23,7 +23,7 @@ The key pair consists of:
 -   Public key (verification) ⟶ .vkey
 
 
-<a id="org788a845"></a>
+<a id="org121e491"></a>
 
 ## Socket
 
@@ -34,14 +34,14 @@ Recall that if you want to run cardano-cli commands on-chain, you need to export
 *Note:*  Cardano socket is created automatically when you start the Cardano node for the first time.
 
 
-<a id="orga34d29d"></a>
+<a id="org878d20e"></a>
 
 ## Testnet magic
 
 Current *Testnet magic* is `1097911063`
 
 
-<a id="orgf39f862"></a>
+<a id="orgb7f6a25"></a>
 
 ## Protocol parameters
 
@@ -50,7 +50,7 @@ We query the *testnet* protocol parameters and save them on a file on the testne
     $ cardano-cli query protocol-parameters --testnet-magic 1097911063 --out-file ~/code/haskell/emurgo/testnet/testnet-protocol-params.json
 
 
-<a id="org2e2d13e"></a>
+<a id="org0a0a079"></a>
 
 ## Addresses
 
@@ -65,7 +65,7 @@ We query the *testnet* protocol parameters and save them on a file on the testne
     All addresses are derived from hashing the public key.
 
 
-<a id="org60e67f6"></a>
+<a id="org75e26e3"></a>
 
 ### Generating credentials
 
@@ -88,7 +88,16 @@ We query the *testnet* protocol parameters and save them on a file on the testne
         myWallet1.addr  myWallet1.vkey  myWallet1.skey  myWallet1M.addr
 
 
-<a id="org8b73c76"></a>
+<a id="org2751928"></a>
+
+### Funding the wallet
+
+Now that we have an address in `myWallet1.addr`, we fund the wallet using the [Faucet](https://testnets.cardano.org/en/testnets/cardano/tools/faucet/).
+
+We only fund wallet 1 in this manner.  Wallet 2 is funded by building a transaction, as explained below.  (If we wanted to use the faucet to fund wallet 2 as well we would need to wait at least 24 hours.)
+
+
+<a id="orgea8936d"></a>
 
 ### Querying a wallet address
 
@@ -104,12 +113,12 @@ We query the *testnet* protocol parameters and save them on a file on the testne
     ![img](./figs/02_transaction1a.png)
 
 
-<a id="org42dcda4"></a>
+<a id="orgf8ae88f"></a>
 
 ## Transactions
 
 
-<a id="org1a54f5e"></a>
+<a id="orgeb97abb"></a>
 
 ### Building the transaction
 
@@ -143,7 +152,7 @@ We query the *testnet* protocol parameters and save them on a file on the testne
         }
 
 
-<a id="org215d932"></a>
+<a id="orga8bbd05"></a>
 
 ### Signing the transaction
 
@@ -172,7 +181,7 @@ We query the *testnet* protocol parameters and save them on a file on the testne
         }
 
 
-<a id="org67c5189"></a>
+<a id="org59fabb4"></a>
 
 ### Submitting the transaction
 
@@ -188,7 +197,7 @@ Submit the transaction:
     Transaction successfully submitted.
 
 
-<a id="org2a9dea0"></a>
+<a id="org1a3da00"></a>
 
 ### Final balances
 
@@ -206,7 +215,7 @@ Of course, the balance of wallet 1 must have diminished:
     30eea3e9228b94cad0cbfb131f65ebf3e9d5b24820394dca8408920037797e64     0        699828427 lovelace + TxOutDatumNone
 
 
-<a id="org97d53ac"></a>
+<a id="org6d878f1"></a>
 
 ## Some useful links
 
