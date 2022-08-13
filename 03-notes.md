@@ -8,9 +8,9 @@ order: -3
 ---
 
 
-<a id="orgae16c9a"></a>
+<a id="org816fe27"></a>
 
-# Working wth Metadata
+# Working with Metadata
 
 We can attach *metadata* to a transaction.  From the [reference](https://github.com/input-output-hk/cardano-node/blob/master/doc/reference/tx-metadata.md):
 
@@ -27,14 +27,14 @@ On-chain metadata that is carried along with the transaction is encoded as CBOR.
 In this notes we:  a) write the json file with metadata; b) build, sign and send a transaction with metadata.
 
 
-<a id="org6754209"></a>
+<a id="org2346a30"></a>
 
 ## The metadata
 
 In this exercise, the purpose of this metadata is to assign a value to a given metadata key (integer) `k = 152755`.  The value is in turn a mapping that assigns the hash of a name to key *name* and the value "1" to the key flag *completed*.
 
 
-<a id="orgda1adf5"></a>
+<a id="org7ae5fd4"></a>
 
 ### Metadata json file
 
@@ -45,14 +45,16 @@ In this exercise, the purpose of this metadata is to assign a value to a given m
     }}
 
 
-<a id="org666b7d7"></a>
+<a id="org97e352a"></a>
 
 ## The transaction
 
 
-<a id="orgf51135e"></a>
+<a id="orgdc0590e"></a>
 
 ### Scripts for build and sign
+
+Wrote the *build* and *sign* scripts.  Don't forget to `chmod u+x <scriptname>` after creating the script files.
 
 1.  Build
 
@@ -79,7 +81,7 @@ In this exercise, the purpose of this metadata is to assign a value to a given m
         	    --out-file tx_meta.signed
 
 
-<a id="org45c038c"></a>
+<a id="org328bf11"></a>
 
 ### Script execution
 
@@ -126,7 +128,7 @@ In this exercise, the purpose of this metadata is to assign a value to a given m
       signature: SignedDSIGN (SigEd25519DSIGN "6f83d3cbaeaa9e54a2bc9d6c7ca69c5e912b5464d6d10a7794008544ae27faa2f2c3d6467afcbb76f1a1138fc3065bac529e0ae3fa27f1815b13502d9260c20c")
 
 
-<a id="org1a2f584"></a>
+<a id="org78bcde1"></a>
 
 ### Submitting the transaction
 
@@ -147,7 +149,7 @@ In this exercise, the purpose of this metadata is to assign a value to a given m
     888eb4a8a5a63eeb809cb565a6cc42bb42b7b89ba54362abbcf7f743a18fe94c     0        699658790 lovelace + TxOutDatumNone
 
 
-<a id="orgadeb300"></a>
+<a id="org4863aa3"></a>
 
 ## References
 
