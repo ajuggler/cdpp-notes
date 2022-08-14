@@ -8,11 +8,11 @@ order: -3
 ---
 
 
-<a id="org1828bc8"></a>
+<a id="org4ecf6c0"></a>
 
 # Working with Metadata
 
-We can attach *metadata* to a transaction.  From the [reference](https://github.com/input-output-hk/cardano-node/blob/master/doc/reference/tx-metadata.md):
+We can attach *metadata* to a transaction.  From the [documentation](https://github.com/input-output-hk/cardano-node/blob/master/doc/reference/tx-metadata.md):
 
 > Transaction metadata (tx metadata) can contain details about a specific transaction, including sender and receiver IDs, transaction comments, and tags. Adding metadata to transactions provides transaction information by adding arbitrarily structured data onto the chain and is a useful feature in Cardano Shelley. Tx metadata is stored on-chain and is carried along with each transaction. A factor in its design is that the on-chain metadata is not stored in the ledger state and does not influence transaction validation, thereby not compromising ledger performance.
 
@@ -24,33 +24,37 @@ On-chain metadata that is carried along with the transaction is encoded as CBOR.
 -   Metadata in JSON format with *no schema*
 -   Metadata in JSON format with *detailed schema*
 
-In this notes we:  a) write the json file with metadata; b) build, sign and send a transaction with metadata.
+In these notes we:  a) write the json file with metadata; b) build, sign and send a transaction with metadata.
 
 
-<a id="org2af2841"></a>
+<a id="org320ea80"></a>
 
 ## The metadata
 
 In this exercise, the purpose of this metadata is to assign a value to a given metadata key (integer) `k = 152755`.  The value is in turn a mapping that assigns the hash of a name to key *name* and the value "1" to the key flag *completed*.
 
 
-<a id="org256ace9"></a>
+<a id="org3d1fccf"></a>
 
 ### Metadata json file
 
-    bash-3.2$ cat metadata.json
+Wrote the file `metadata.json` :
+
+    $ cat metadata.json
     {"152755" : {
         "name" : "7260b0c5083b0109fd9b9e026c0b9f519dc64bdfa901bc8dbc316a2d60870e4f",
         "completed" : 1
     }}
 
+We will use the option  `--metadata-json-file`  to load this metadata.
 
-<a id="orgf1234f4"></a>
+
+<a id="org2f5590f"></a>
 
 ## The transaction
 
 
-<a id="org6760a48"></a>
+<a id="org1a81ba9"></a>
 
 ### Scripts for build and sign
 
@@ -81,7 +85,7 @@ Wrote the *build* and *sign* scripts.  Don't forget to `chmod u+x <scriptname>` 
         	    --out-file tx_meta.signed
 
 
-<a id="org38dae3e"></a>
+<a id="org7db484b"></a>
 
 ### Script execution
 
@@ -133,7 +137,7 @@ Let us explore the (not yet submitted) signed transaction:
 So we confirm that the *metadata* is part of the transaction.
 
 
-<a id="org3802522"></a>
+<a id="org71d0d29"></a>
 
 ### Submitting the transaction
 
@@ -156,7 +160,7 @@ So we confirm that the *metadata* is part of the transaction.
 We see that a utxo was consumed and a new utxo was created.
 
 
-<a id="org2e30f63"></a>
+<a id="orgb26fc91"></a>
 
 ## References
 
