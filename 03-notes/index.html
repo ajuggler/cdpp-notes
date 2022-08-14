@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/cdpp-notes">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.713765020938">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.713768889139">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -31,11 +31,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/cdpp-notes/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=2.4.0.713765020938" rel="stylesheet" />
+    <link href="../resources/css/retype.css?v=2.4.0.713768889139" rel="stylesheet" />
 
-    <script type="text/javascript" src="../resources/js/config.js?v=2.4.0.713765020938" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../resources/js/config.js?v=2.4.0.713768889139" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=2.4.0.713765020938" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=2.4.0.713768889139" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -179,7 +179,7 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<p><a id="org4ecf6c0"></a></p>
+<p><a id="orgf2bcada"></a></p>
 <doc-anchor-target id="working-with-metadata" class="break-words">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#working-with-metadata">#</doc-anchor-trigger>
@@ -210,7 +210,7 @@
 <li>Metadata in JSON format with <em>detailed schema</em></li>
 </ul>
 <p>In these notes we:  a) write the json file with metadata; b) build, sign and send a transaction with metadata.</p>
-<p><a id="org320ea80"></a></p>
+<p><a id="org4fecf7f"></a></p>
 <doc-anchor-target id="the-metadata">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-metadata">#</doc-anchor-trigger>
@@ -218,7 +218,7 @@
     </h2>
 </doc-anchor-target>
 <p>In this exercise, the purpose of this metadata is to assign a value to a given metadata key (integer) <code v-pre>k = 152755</code>.  The value is in turn a mapping that assigns the hash of a name to key <em>name</em> and the value &quot;1&quot; to the key flag <em>completed</em>.</p>
-<p><a id="org3d1fccf"></a></p>
+<p><a id="org3748b52"></a></p>
 <doc-anchor-target id="metadata-json-file">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#metadata-json-file">#</doc-anchor-trigger>
@@ -234,14 +234,14 @@
 }}</code></pre>
 </doc-codeblock></div>
 <p>We will use the option  <code v-pre>--metadata-json-file</code>  to load this metadata.</p>
-<p><a id="org2f5590f"></a></p>
+<p><a id="org929a540"></a></p>
 <doc-anchor-target id="the-transaction">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-transaction">#</doc-anchor-trigger>
         <span>The transaction</span>
     </h2>
 </doc-anchor-target>
-<p><a id="org1a81ba9"></a></p>
+<p><a id="org6adce13"></a></p>
 <doc-anchor-target id="scripts-for-build-and-sign">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#scripts-for-build-and-sign">#</doc-anchor-trigger>
@@ -263,6 +263,12 @@
 	    --protocol-params-file $HOME/code/haskell/emurgo/testnet/testnet-protocol-params.json \
 	    --out-file tx_meta.draft</code></pre>
 </doc-codeblock></div>
+<p>The file <code v-pre>utxo1.tmp,</code> used by the option  <code v-pre>--tx-in</code> , just contains the identifier (transaction ID plus index) of the UTxO that is going to be consumed (see UTxOs at wallet 1 before submission in section <em>Submitting the transaction</em>):</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">$ cat utxo1.tmp
+30eea3e9228b94cad0cbfb131f65ebf3e9d5b24820394dca8408920037797e64#0</code></pre>
+</doc-codeblock></div>
+<p>Note that the hash symbol (#) separates the Tx Id and the index.</p>
 </li>
 <li><p>Sign</p>
 <p>Wrote the script <code v-pre>tx_meta_signed.sh</code> :</p>
@@ -275,7 +281,7 @@
 </doc-codeblock></div>
 </li>
 </ol>
-<p><a id="org7db484b"></a></p>
+<p><a id="org2675302"></a></p>
 <doc-anchor-target id="script-execution">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#script-execution">#</doc-anchor-trigger>
@@ -329,7 +335,7 @@ witnesses:
   signature: SignedDSIGN (SigEd25519DSIGN &quot;6f83d3cbaeaa9e54a2bc9d6c7ca69c5e912b5464d6d10a7794008544ae27faa2f2c3d6467afcbb76f1a1138fc3065bac529e0ae3fa27f1815b13502d9260c20c&quot;)</code></pre>
 </doc-codeblock></div>
 <p>So we confirm that the <em>metadata</em> is part of the transaction.</p>
-<p><a id="org71d0d29"></a></p>
+<p><a id="org7145551"></a></p>
 <doc-anchor-target id="submitting-the-transaction">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#submitting-the-transaction">#</doc-anchor-trigger>
@@ -354,7 +360,7 @@ $ cardano-cli query utxo --address $(cat myWallet1.addr) --testnet-magic 1097911
 888eb4a8a5a63eeb809cb565a6cc42bb42b7b89ba54362abbcf7f743a18fe94c     0        699658790 lovelace + TxOutDatumNone</code></pre>
 </doc-codeblock></div>
 <p>We see that a utxo was consumed and a new utxo was created.</p>
-<p><a id="orgb26fc91"></a></p>
+<p><a id="org0cf5726"></a></p>
 <doc-anchor-target id="references">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#references">#</doc-anchor-trigger>
