@@ -8,7 +8,7 @@ order: -3
 ---
 
 
-<a id="org4ecf6c0"></a>
+<a id="orgf2bcada"></a>
 
 # Working with Metadata
 
@@ -27,14 +27,14 @@ On-chain metadata that is carried along with the transaction is encoded as CBOR.
 In these notes we:  a) write the json file with metadata; b) build, sign and send a transaction with metadata.
 
 
-<a id="org320ea80"></a>
+<a id="org4fecf7f"></a>
 
 ## The metadata
 
 In this exercise, the purpose of this metadata is to assign a value to a given metadata key (integer) `k = 152755`.  The value is in turn a mapping that assigns the hash of a name to key *name* and the value "1" to the key flag *completed*.
 
 
-<a id="org3d1fccf"></a>
+<a id="org3748b52"></a>
 
 ### Metadata json file
 
@@ -49,12 +49,12 @@ Wrote the file `metadata.json` :
 We will use the option  `--metadata-json-file`  to load this metadata.
 
 
-<a id="org2f5590f"></a>
+<a id="org929a540"></a>
 
 ## The transaction
 
 
-<a id="org1a81ba9"></a>
+<a id="org6adce13"></a>
 
 ### Scripts for build and sign
 
@@ -73,6 +73,13 @@ Wrote the *build* and *sign* scripts.  Don't forget to `chmod u+x <scriptname>` 
         	    --metadata-json-file metadata.json \
         	    --protocol-params-file $HOME/code/haskell/emurgo/testnet/testnet-protocol-params.json \
         	    --out-file tx_meta.draft
+    
+    The file `utxo1.tmp,` used by the option  `--tx-in` , just contains the identifier (transaction ID plus index) of the UTxO that is going to be consumed (see UTxOs at wallet 1 before submission in section *Submitting the transaction*):
+    
+        $ cat utxo1.tmp
+        30eea3e9228b94cad0cbfb131f65ebf3e9d5b24820394dca8408920037797e64#0
+    
+    Note that the hash symbol (#) separates the Tx Id and the index.
 
 2.  Sign
 
@@ -85,7 +92,7 @@ Wrote the *build* and *sign* scripts.  Don't forget to `chmod u+x <scriptname>` 
         	    --out-file tx_meta.signed
 
 
-<a id="org7db484b"></a>
+<a id="org2675302"></a>
 
 ### Script execution
 
@@ -137,7 +144,7 @@ Let us explore the (not yet submitted) signed transaction:
 So we confirm that the *metadata* is part of the transaction.
 
 
-<a id="org71d0d29"></a>
+<a id="org7145551"></a>
 
 ### Submitting the transaction
 
@@ -160,7 +167,7 @@ So we confirm that the *metadata* is part of the transaction.
 We see that a utxo was consumed and a new utxo was created.
 
 
-<a id="orgb26fc91"></a>
+<a id="org0cf5726"></a>
 
 ## References
 
